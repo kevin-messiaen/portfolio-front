@@ -24,6 +24,9 @@
         </p>
       </v-flex>
 
+
+      <Contact/>
+
       <v-flex
         mb-5
         xs12
@@ -85,8 +88,13 @@
 </template>
 
 <script>
+import Contact from './Contact'
+
 export default {
-  data: () => ({
+  name: 'HelloWorld',
+  components: {
+    Contact,
+  },data: () => ({
     ecosystem: [
       {
         text: 'vuetify-loader',
