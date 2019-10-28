@@ -1,6 +1,8 @@
-// vue.config.js
 module.exports = {
-	devServer: {
-        proxy: 'http://localhost:8090'
-    }
+  "devServer": {
+    "proxy": "http://localhost:8090"
+  },
+  "transpileDependencies": [
+    "vuetify"
+  ]
 }
