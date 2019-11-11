@@ -42,7 +42,12 @@
         </v-row>
       </v-col>
       <v-col cols="12" md="6" class="text-center">
-        <v-img src="../assets/responsive.svg" aspect-ratio="1.83" contain></v-img>
+        <v-tooltip top>
+          <template v-slot:activator="{ on }">
+            <v-img src="../assets/responsive.svg" aspect-ratio="1.83" contain v-on="on" alt="Responsive"></v-img>
+          </template>
+          <span>Des sites optimisés pour tous supports!</span>
+        </v-tooltip>
       </v-col>
     </v-row>
   </div>

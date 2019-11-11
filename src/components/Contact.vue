@@ -6,11 +6,21 @@
           <p class="display-1">Me contacter:</p>
           <v-text-field v-model="name" :rules="nameRules" label="Nom" required></v-text-field>
           <v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
-          <v-textarea v-model="message" :counter="500" :rules="messageRules" label="Message" required></v-textarea>
-          <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">Envoyer</v-btn>
+          <v-textarea
+            v-model="message"
+            :counter="500"
+            :rules="messageRules"
+            label="Message"
+            required
+          ></v-textarea>
+          <v-btn :disabled="!valid" color="primary" class="mr-4" @click="validate">Envoyer</v-btn>
         </v-form>
       </v-col>
     </v-row>
+    <v-snackbar color="primary" v-model="snackbar">
+      Merci pour votre message!
+      <v-btn color="white" text @click="snackbar = false">Fermer</v-btn>
+    </v-snackbar>
   </div>
 </template>
 
@@ -29,7 +39,8 @@ export default {
     messageRules: [
       v => !!v || "Le contenue du message est requis",
       v => v.length < 500 || "Le message ne doit pas dépasser 500 charactères"
-    ]
+    ],
+    snackbar: false
   }),
 
   methods: {
